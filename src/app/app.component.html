@@ -1,0 +1,7 @@
+<p>{{data[0].backdrop_path}}</p>
+<p>{{title}}</p>
+<div *ngFor="let item of data" class="row">
+  <div class="col-md-4">
+    <img [src]="'https://image.tmdb.org/t/p/w500'+item.poster_path">
+  </div>
+</div>
