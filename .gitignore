@@ -128,3 +128,42 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+# Angular specific
+/dist/
+/node_modules/
+/src/**/*.js
+/src/**/*.map
+/src/**/*.d.ts
+/src/**/*.ngfactory.ts
+/src/**/*.ngsummary.json
+/src/**/*.metadata.json
+/src/**/*.spec.ts
+/src/**/*.js.map
+
+# IDEs
+/.idea/
+/.vscode/
+/*.sublime-project
+/*.sublime-workspace
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# npm
+package-lock.json
+yarn.lock
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Misc
+*.tmp
+*.bak
+*.swp
