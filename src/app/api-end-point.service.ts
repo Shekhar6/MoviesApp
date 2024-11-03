@@ -11,7 +11,7 @@ export class ApiEndPointService {
   constructor(private readonly apiService: HttpClient) { }
 
 
-  public postApi():Observable<any>{
-    return this.apiService.get(environment.testUrl);
+  public postApi(url: string):Observable<any>{
+    return this.apiService.get(url);
   }
 }

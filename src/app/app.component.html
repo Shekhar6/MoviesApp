@@ -1,7 +1,56 @@
-<p>{{data[0].backdrop_path}}</p>
-<p>{{title}}</p>
-<div *ngFor="let item of data" class="row">
-  <div class="col-md-4">
-    <img [src]="'https://image.tmdb.org/t/p/w500'+item.poster_path">
+<div class="p-3 mb-2 bg-dark text-white">
+  <div class="row">
+    <div class="col-md-4">
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" (click)="previousePage()" type="button">Previous</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" (click)="nextPage()"type="button">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-8">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Language</mat-label>
+          <input
+            type="text"
+            placeholder="Pick one"
+            aria-label="Number"
+            matInput
+            [formControl]="myControl"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete
+            autoActiveFirstOption
+            #auto="matAutocomplete"
+            (optionSelected)="getMovies()"
+          >
+            @for (item of filteredOptions ; track item) {
+            <mat-option [value]="item.option">{{ item.option }}</mat-option>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="container text-center">
+    <div class="row">
+      <div *ngFor="let item of data" class="col-md-4 mb-3" style="width: 20rem">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500' + item.poster_path"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.original_title }}</h5>
+          <p class="card-text">{{ item.overview }}</p>
+          <a href="#" class="btn btn-primary">Continue</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
