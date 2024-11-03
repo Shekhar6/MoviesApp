@@ -14,4 +14,8 @@ export class ApiEndPointService {
   public postApi(url: string):Observable<any>{
     return this.apiService.get(url);
   }
+
+  public getMovieByid(url: string):Observable<any>{
+    return this.apiService.get(url);
+  }
 }
