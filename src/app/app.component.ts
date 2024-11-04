@@ -84,7 +84,7 @@ export class AppComponent implements OnInit {
 
   public previousePage(): void {
     if (this.pageCount !== 0) {
-      this.pageCount++;
+      this.pageCount--;
       const newUrl = this.getMoviesUrl();
       const url = newUrl.replace('&page=1', '&page=' + this.pageCount);
       this.getMoviesByUrl(url);
